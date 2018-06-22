@@ -1,0 +1,162 @@
+VARIABLES:
+EMPTY = vacio
+BLACK = azul
+WHITE = blanco
+INFINITY = infinito
+MAX = max
+MIN = min
+DEFAULT_LEVEL = dificultad
+HUMAN = humano
+COMPUTER = computadora
+
+
+TABLERO:
+Board= Tablero
+board = tablero
+valid_moves = movvalido
+__getitem__ = objeto
+i = f
+j= c
+lookup =  posibles
+row = fila
+column = columna
+other = otro
+places = espacios
+get_valid_moves = movimientovalido
+apply_move = efectuarmovimiento
+move = movimiento
+flip = cambiar
+direction = cireccion
+position = posicion
+row_inc=filainc
+col_inc=colinc
+get_changes=devolver cambios
+whites = blancos
+blacks = azules
+empty = vacios
+count_stones = contarpiezas
+game_ended = juegotermino
+print_board=formartablero
+compare=comparar
+otherBoard=otrotablero
+diffBoard=tablerodif
+get_adjacent_count = espacioalcostado
+adjCount = ecostado
+next_states = siguientemov
+newBoard = nuevotablero
+
+
+EVALUADOR:
+Evaluator = Evaluador
+WIPEOUT_SCORE = perdertodo_puntuacion
+PIECE_COUNT_WEIGHT = pieza_contador_valor
+POTENTIAL_MOBILITY_WEIGHT = posibles_valor
+MOBILITY_WEIGHT = movimiento_valor
+CORNER_WEIGHT = esquinas_valor
+EDGE_WEIGHT = lados_valor
+XSQUARE_WEIGHT = x_valor
+get_piece_differential=diferencial_piezas
+band=banda
+player=jugador
+enemy=oponente
+myScore=mipuntuacion
+yourScore=tupuntuacion
+get_corner_differential = diferencial_lados
+deltaboard= dtablero
+deltaCount = dcontar
+get_edge_differential = lados_diferencial
+squares = cuadrados
+get_xsquare_differential = diferencial_x
+startBoard = tableroinicio
+currentBoard =  tableroactual
+cornerx = esquinax
+cornery = esquinay
+get_potential_mobility_differential = diferencial_posibles
+get_mobility_differential = diferencial_movimientos
+score = puntuacion
+currentDepth = profundidadactual
+opponent = oponente
+sc = punt
+RandomPlayer=JugadorRandom
+
+
+JUEGO:
+
+
+MINIMAX
+Minimax=Minimax
+minimax=minimax
+parentBoard = tableromaster
+depth = profundidad
+bestChild = mejoropcion
+child = opcion
+
+
+GRAPHICS
+Gui = Graphics
+SCREEN_SIZE =screensize
+BOARD_POS = posiciontablero
+BOARD = tablero
+BOARD_SIZE = tablerotamano
+SQUARE_SIZE = espaciotamano
+BLACK_LAB_POS = azulpalabrapos
+WHITE_LAB_POS = blancopalabrapos
+font = font
+scoreFont = puntuacionfont
+board_img=tableroimg
+black_img=azulimg
+white_img=blancoimg
+tip_img=tipimg
+clear_img=vacioimg
+show_options = mostraropciones
+title_fnt=titulofont
+title=titulo
+title_pos = tituloposicion
+start_txt= comenzartexto
+start_pos= comenzarposicion
+player1_txt = jugador1texto
+player1_pos =  jugador1pos
+player2_txt = jugador2texto
+player2_pos =  jugador2pos
+level_txt = niveltexto
+level_pos= nivelpos
+human_txt=humanotexto
+comp_txt=computadoratexto
+start_pos=comienzopos
+level=nivel
+get_chosen_player=elegirjugador
+get_chosen_level=elegirnivel
+show_winner=mostrarganador
+player_color=colorjugador
+hmn_pos=humanopos
+comp_pos=computadorapos
+one_txt=unotexto
+one_pos=unopos
+two_txt=dostexto
+two_pos=dosposicion
+three_txt=trestexto
+three_pos=tresposicion
+show_game=mostrarjuego
+score_size=puntajetamano
+score1=puntaje1
+score2=puntaje2
+put_stone=ponerpieza
+clear_square=espaciovacio
+get_mouse_input=movimientomouse
+position=posicion
+blacks_str=azulesstr
+white_str=blancosstr
+showScore=mostrarpuntaje
+blackstr=azulstr
+whitestr=blancostr
+wait_quit=quit
+
+JUGADOR:
+change_color=cambiarcolor
+get_ove=obtenermovida
+current_board=tablero_actual
+get_current_board=obtenertableroactual
+
+JUEGO
+get_options=obteneropciones
+now_playing=jugadoractual
