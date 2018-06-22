@@ -1,7 +1,7 @@
 infinito = 100000
 
 
-class Minimax(objeto):
+class Minimax(object):
 
 
     def __init__(self, heuristic_eval):
