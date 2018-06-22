@@ -14,8 +14,8 @@ class Tablero:
         self.movvalido = []
 
 
-    def objeto(self, i, j):
-        return self.tablero[i][j]
+    def objeto(self, f, c):
+        return self.tablero[f][c]
 
 
     def posibles(self, fila, columna, color):
@@ -134,8 +134,8 @@ class Tablero:
             filainc = 1
             colinc = 1
         elif direccion == 5:
-            row_inc = 1
-            col_inc = 0
+            filainc = 1
+            colinc = 0
         elif direccion == 6:
             filainc = 1
             colinc = -1
@@ -165,23 +165,19 @@ class Tablero:
                 for pos in espacios:
                     self.tablero[pos[0]][pos[1]] = color
 
-
     def devolvercambios(self):
-        blancos, azules, vacio = self.contarpiezas()
-        return (self.tablero, azules, blancos)
-
+        blancos, azules, vacios = self.contarpiezas()
+        return self.tablero, azules, blancos
 
     def juegotermino(self):
-        blancos, azules, vacio = self.contarpiezas()
-        if blancos == 0 or azules == 0 or vacio == 0:
+        blancos, azules, vacios = self.contarpiezas()
+        if blancos == 0 or azules == 0 or vacios == 0:
             return True
-        if self.movimientovalido(azul) == [] and \
-self.movimientovalido(blanco) == []:
+        if self.movimientovalido(azul) == [] and self.movimientovalido(blanco) == []:
             return True
         return False
 
-
-    def imprimirtablero(self):
+    def formartablero(self):
         for f in range(8):
             print(f, ' |', end=' ')
             for c in range(8):
@@ -194,7 +190,6 @@ self.movimientovalido(blanco) == []:
                 print('|', end=' ')
             print()
 
-
     def contarpiezas(self):
         blancos = 0
         azules = 0
@@ -203,12 +198,11 @@ self.movimientovalido(blanco) == []:
             for c in range(8):
                 if self.tablero[f][c] == blanco:
                     blancos += 1
-                elif self.tablero[f][j] == azul:
+                elif self.tablero[f][c] == azul:
                     azules += 1
                 else:
                     vacios += 1
         return blancos, azules, vacios
-
 
     def comparar(self, otrotablero):
         tablerodif = Tablero()
@@ -223,7 +217,7 @@ self.movimientovalido(blanco) == []:
         return otrotablero
 
     def espaciosalcostado(self, color):
-        ecostado= 0
+        ecostado = 0
         for x, y in [(a, b) for a in range(8) for b in range(8) if self.tablero[a][b] == color]:
             for f, c in [(a, b) for a in [-1, 0, 1] for b in [-1, 0, 1]]:
                 if 0 <= x + f <= 7 and 0 <= y + c <= 7:
@@ -231,8 +225,7 @@ self.movimientovalido(blanco) == []:
                         ecostado += 1
         return ecostado
 
-
-    def siguienteestado(self, color):
+    def siguientemov(self, color):
         movvalido = self.movimientovalido(color)
         for movimiento in movvalido:
             nuevotablero = deepcopy(self)
